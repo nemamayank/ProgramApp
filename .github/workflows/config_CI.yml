@@ -42,22 +42,26 @@ jobs:
           api-level: '30'  # Specify the SDK version (e.g., API 30)
           build-tools-version: '30.0.3'  # Specify the build tools version
 
-      # Step 5: Run a basic test script (echo test message)
+      # Step 5: Fix gradlew permissions to make it executable
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      # Step 6: Run a basic test script (echo test message)
       - name: Run a one-line script
         run: echo "Hello, world!"
 
-      # Step 6: Build the APK
+      # Step 7: Build the APK
       - name: Build the APK
         run: ./gradlew assembleRelease  # Build the release APK using Gradle
 
-      # Step 7: Archive the APK as an artifact
+      # Step 8: Archive the APK as an artifact
       - name: Archive release APK as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
           path: app/build/outputs/apk/release/app-release.apk  # Path to the APK file
 
-      # Step 8: (Optional) Run a multi-line script for additional tasks (e.g., tests, notifications)
+      # Step 9: (Optional) Run a multi-line script for additional tasks (e.g., tests, notifications)
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
