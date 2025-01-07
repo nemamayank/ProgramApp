@@ -23,7 +23,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '11'  # Use JDK 11
+          java-version: '17.0.11'  # Use JDK 11
           distribution: 'temurin'
 
       # Step 3: Cache Gradle dependencies to speed up builds
