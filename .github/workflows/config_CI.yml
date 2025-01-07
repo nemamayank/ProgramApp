@@ -39,7 +39,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
         with:
-          api-level: '35'  # Specify the SDK version (e.g., API 30)
+          api-level: '30'  # Specify the SDK version (e.g., API 30)
           build-tools-version: '30.0.3'  # Specify the build tools version
 
       # Step 5: Run a basic test script (echo test message)
